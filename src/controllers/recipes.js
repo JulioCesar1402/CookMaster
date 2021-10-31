@@ -27,8 +27,6 @@ const create = async (req, res) => {
   } catch (e) {
     return res.status(401).json({ message: 'jwt malformed' });
   }
-
-
 };
 
 module.exports = {
