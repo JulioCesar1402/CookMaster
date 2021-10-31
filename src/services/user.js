@@ -1,4 +1,4 @@
-const { isValid } = require('../validation/user');
+const { isValid, verifyIfIsARootUser } = require('../validation/user');
 const Models = require('../models/user');
 
 const create = async (name, email, password) => {
@@ -19,7 +19,9 @@ const create = async (name, email, password) => {
     };
   }
 
-  const createProduct = await Models.create(name, email, password);
+  const role = verifyIfIsARootUser(name, email, password);
+
+  const createProduct = await Models.create(name, email, password, role);
   return createProduct;
 };
 

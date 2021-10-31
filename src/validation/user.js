@@ -16,6 +16,14 @@ const isValid = (params, hasEmail) => {
   return null;
 };
 
+const verifyIfIsARootUser = (name, email, password) => {
+  if (name === 'admin' && email === 'root@email.com' && password === 'admin') {
+    return 'admin';
+  }
+  return 'user';
+};
+
 module.exports = {
   isValid,
+  verifyIfIsARootUser,
 };
