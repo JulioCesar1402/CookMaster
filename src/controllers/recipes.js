@@ -29,6 +29,23 @@ const create = async (req, res) => {
   }
 };
 
+const findAll = async (_req, res) => {
+  const recipes = await Services.findAll();
+  return res.status(200).json(recipes);
+};
+
+const findById = async (req, res) => {
+  const { id } = req.params;
+  const recipes = await Services.findById(id);
+  if (recipes.err) {
+    const { message, code } = recipes.err;
+    return res.status(code).json({ message });
+  }
+  return res.status(200).json(recipes);
+};
+
 module.exports = {
   create,
+  findAll,
+  findById,
 };
