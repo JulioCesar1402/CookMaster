@@ -1,4 +1,4 @@
-const connection = require('../connection/connection');
+const connection = require('../api/connection');
 
 const findBy = async (email, password) => {
   const response = await connection()

@@ -1,4 +1,4 @@
-const connection = require('../connection/connection');
+const connection = require('../api/connection');
 
 const create = async (name, email, password, role) => {
   const response = await connection()
