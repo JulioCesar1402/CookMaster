@@ -31,8 +31,22 @@ const findById = async (id) => {
   return response;
 };
 
+const update = async (name, ingredients, preparation, recipeId) => {
+  const isValidName = isValid(name);
+  const isValidIngredients = isValid(ingredients);
+  const isValidPreparation = isValid(preparation);
+
+  if (isValidName) return isValidName;
+  if (isValidIngredients) return isValidIngredients;
+  if (isValidPreparation) return isValidPreparation;
+
+  const updateProduct = await Models.update(name, ingredients, preparation, recipeId);
+  return updateProduct;
+};
+
 module.exports = {
   create,
   findAll,
   findById,
+  update,
 };
