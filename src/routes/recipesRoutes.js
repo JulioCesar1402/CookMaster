@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Controller = require('../controllers/recipes');
-const { alreadyExists, whoIsLogin} = require('../middleware/recipeMiddleware');
+const { alreadyExists, whoIsLogin } = require('../middleware/recipeMiddleware');
 
 router.post('/', Controller.create);
 router.get('/', Controller.findAll);
