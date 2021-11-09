@@ -10,8 +10,8 @@ const create = async (name, ingredients, preparation, userId) => {
   if (isValidIngredients) return isValidIngredients;
   if (isValidPreparation) return isValidPreparation;
 
-  const createProduct = await Models.create(name, ingredients, preparation, userId);
-  return createProduct;
+  const createRecipe = await Models.create(name, ingredients, preparation, userId);
+  return createRecipe;
 };
 
 const findAll = async () => {
@@ -40,8 +40,13 @@ const update = async (name, ingredients, preparation, recipeId) => {
   if (isValidIngredients) return isValidIngredients;
   if (isValidPreparation) return isValidPreparation;
 
-  const updateProduct = await Models.update(name, ingredients, preparation, recipeId);
-  return updateProduct;
+  const updateRecipe = await Models.update(name, ingredients, preparation, recipeId);
+  return updateRecipe;
+};
+
+const remove = async (id) => {
+  const response = await Models.remove(id);
+  return response;
 };
 
 module.exports = {
@@ -49,4 +54,5 @@ module.exports = {
   findAll,
   findById,
   update,
+  remove,
 };

@@ -58,9 +58,21 @@ const update = async (req, res) => {
   return res.status(200).json(isValidToUpdate);
 };
 
+const remove = async (req, res) => {
+  const { id } = req.params;
+
+  const isValidToRemove = await Services.remove(id);
+  if (isValidToRemove.err) {
+    const { message, code } = isValidToRemove.err;
+    return res.status(code).json({ message });
+  }
+  return res.status(204).json(isValidToRemove);
+};
+
 module.exports = {
   create,
   findAll,
   findById,
   update,
+  remove,
 };
