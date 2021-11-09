@@ -44,35 +44,6 @@ const findById = async (req, res) => {
   return res.status(200).json(recipes);
 };
 
-const alreadyExists = async (req, res, next) => {
-  const { id } = req.params;
-  const recipes = await Services.findById(id);
-  if (recipes.err) {
-    const { message, code } = recipes.err;
-    return res.status(code).json({ message });
-  }
-  next();
-};
-
-const whoIsThisLogin = async (req, res, next) => {
-  const token = req.headers.authorization;
-  if (!token) {
-    return res.status(401).json({ message: 'missing auth token' });
-  }
-  const { id } = req.params;
-  try {
-    const verifiedToken = jwt.verify(token, secret, jwtConfig);
-    const { role, _id } = verifiedToken.userWithoutPassword;
-    const recipes = await Services.findById(id);
-    if (_id === recipes.userId || role === 'admin') {
-      return next();
-    }
-    return res.status(401).json({ message: 'missing auth token' });
-  } catch (e) {
-    return res.status(401).json({ message: 'jwt malformed' });
-  }
-};
-
 const update = async (req, res) => {
   const { name, ingredients, preparation } = req.body;
   const { id } = req.params;
@@ -91,7 +62,5 @@ module.exports = {
   create,
   findAll,
   findById,
-  alreadyExists,
-  whoIsThisLogin,
   update,
 };
