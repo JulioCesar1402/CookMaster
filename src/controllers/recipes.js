@@ -69,10 +69,23 @@ const remove = async (req, res) => {
   return res.status(204).json(isValidToRemove);
 };
 
+const uploadImage = async (req, res) => {
+  const { id } = req.params;
+  const isValidToUpdate = await Services.uploadImage(id);
+
+  if (isValidToUpdate.err) {
+    const { message, code } = isValidToUpdate.err;
+    return res.status(code).json({ message });
+  }
+
+  return res.status(200).json(isValidToUpdate);
+};
+
 module.exports = {
   create,
   findAll,
   findById,
   update,
   remove,
+  uploadImage,
 };

@@ -49,10 +49,25 @@ const remove = async (id) => {
   return response;
 };
 
+const uploadImage = async (recipeId) => {
+  const photoFile = `localhost:3000/src/uploads/${recipeId}.jpeg`;
+
+  const updateRecipe = await Models.uploadImage(photoFile, recipeId);
+  if (!updateRecipe) {
+    return {
+      err: {
+        message: 'recipe not found', code: '404',
+      },
+    };
+  }
+  return updateRecipe;
+};
+
 module.exports = {
   create,
   findAll,
   findById,
   update,
   remove,
+  uploadImage,
 };
