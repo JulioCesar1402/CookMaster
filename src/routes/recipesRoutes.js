@@ -29,9 +29,4 @@ router.put(
   Controller.uploadImage,
 );
 
-router.get('/', (_req, res) => {
-  const message = 'Está funcionando';
-  return res.status(200).json({ message });
-});
-
 module.exports = router;
