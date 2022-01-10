@@ -14,18 +14,10 @@ An api for creating and viewing your own recipes
 - Install all dependency
 ```
 npm install
-
-    or
-
-yarn install
 ```
 - Start the project
 ```
 npm start
-
-    or
-
-yarn start
 ```
 With that, access localhost in your browser to see [all your tasks](http://localhost:3000/)
 
