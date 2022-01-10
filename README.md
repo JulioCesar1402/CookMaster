@@ -1,3 +1,7 @@
+### Terms and Agreements
+
+Project carried out during the Trybe course
+
 # Getting start with CookMaster
 
 An api for creating and viewing your own recipes
