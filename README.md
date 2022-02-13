@@ -5,6 +5,7 @@ Project developed during the Trybe course
 ## Technologies:
 ![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white)
 ![NodeJs](https://img.shields.io/badge/nodejs-green?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/express-white?style=for-the-badge&logo=express&logoColor=black)
 ![Mongodb](https://img.shields.io/badge/mongodb-darkgreen?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ## Requirements:
