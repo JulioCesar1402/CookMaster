@@ -1,23 +1,33 @@
 ### Terms and Agreements
 
-Project carried out during the Trybe course
+Project developed during the Trybe course
+
+## Technologies:
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white)
+![NodeJs](https://img.shields.io/badge/nodejs-green?style=for-the-badge&logo=node.js&logoColor=white)
+![Mongodb](https://img.shields.io/badge/mongodb-darkgreen?style=for-the-badge&logo=mongodb&logoColor=white)
+
+## Requirements:
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
 # Getting start with CookMaster
 
 An api for creating and viewing your own recipes
 
 ## Download the repository with:
-### `git clone git@github.com:JulioCesar1402/CookMaster.git`
+```
+$ git clone git@github.com:JulioCesar1402/CookMaster.git
+```
 
 ## Running project:
 
 - Install all dependency
 ```
-npm install
+$ npm install
 ```
 - Start the project
 ```
-npm start
+$ npm start
 ```
 With that, access localhost in your browser to see [all your tasks](http://localhost:3000/)
 
